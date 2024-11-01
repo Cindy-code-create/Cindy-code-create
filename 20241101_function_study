@@ -1,0 +1,52 @@
+/******************************************************************************
+
+                              Online C++ Debugger.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Debug" button to debug it.
+
+*******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+   struct employee{
+       string name;
+       string phone;
+       int enteryear;
+       int salary;
+   };
+
+
+void print_emp(employee e) {
+    cout << "======================\n";
+    cout << e.name << " enter:" << e.enteryear << endl;
+    cout << " salary:" << e.salary << endl;
+    cout << "======================\n";
+}
+
+void raise(employee& e){
+     
+    if (e.enteryear<=2010){
+        e.salary=20;
+    }
+    else{
+        e.salary=10;
+    }
+    //print_emp(e);
+}   
+
+int main()
+{
+   employee E1;
+   employee E2;
+   E1.name="Elsa";
+   E1.enteryear=2006;
+   E2.name="Anna";
+   E2.enteryear=2016;
+   raise(E1);
+   raise(E2);
+   //cout<<E1.name;
+   print_emp(E1);
+   print_emp(E2);
+   return 0;
+}
